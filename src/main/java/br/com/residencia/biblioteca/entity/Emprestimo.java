@@ -17,19 +17,19 @@ import com.fasterxml.jackson.annotation.JacksonInject.Value;
 @Table(name = "emprestimo")
 public class Emprestimo {
 	
-	public Alunos getAluno() {
+	public Aluno getAluno() {
 		return aluno;
 	}
 
-	public void setAluno(Alunos aluno) {
+	public void setAluno(Aluno aluno) {
 		this.aluno = aluno;
 	}
 
-	public Livros getLivro() {
+	public Livro getLivro() {
 		return livro;
 	}
 
-	public void setLivro(Livros livro) {
+	public void setLivro(Livro livro) {
 		this.livro = livro;
 	}
 
@@ -59,12 +59,12 @@ public class Emprestimo {
 	@ManyToOne
 	@JoinColumn (name = "numeromatriculaaluno",
 	referencedColumnName = "numeromatriculaaluno")
-	private Alunos aluno;
+	private Aluno aluno;
 	
 	@OneToOne
 	@JoinColumn (name = "codigolivro",
 	referencedColumnName = "codigolivro")
-	private Livros livro;
+	private Livro livro;
 
 	public Integer getCodigoemprestimo() {
 		return codigoemprestimo;

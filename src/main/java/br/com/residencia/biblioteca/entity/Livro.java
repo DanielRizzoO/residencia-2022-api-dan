@@ -13,8 +13,8 @@ import javax.persistence.Column;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "livros")
-public class Livros {
+@Table(name = "livro")
+public class Livro {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,9 +36,11 @@ public class Livros {
 	@ManyToOne
 	@JoinColumn(name = "codigoeditora", referencedColumnName = "codigoeditora")
 	private Editora editora;
-@OneToOne(mappedBy = "livro")
+
+	@OneToOne(mappedBy = "livro")
 	private Emprestimo emprestimo;
-public Integer getCodigoLivro() {
+
+	public Integer getCodigoLivro() {
 	return codigoLivro;
 }
 public void setCodigoLivro(Integer codigoLivro) {
