@@ -31,14 +31,6 @@ public class Editora {
 		return livro;
 	}
 
-	public void setLivros(Set<Livro> livros) {
-		this.livro = livros;
-	}
-
-	public Set<Livro> getLivro() {
-		return livro;
-	}
-
 	public void setLivro(Set<Livro> livro) {
 		this.livro = livro;
 	}

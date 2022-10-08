@@ -41,6 +41,6 @@ public class AlunoService {
 		 alunoRepository.deleteById(id);
 		 return getAlunoById(id);
 	}
-
+ 
 	
 }

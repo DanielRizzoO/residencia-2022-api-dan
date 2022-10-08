@@ -38,15 +38,6 @@ public class Emprestimo {
 	@Column(name = "codigoemprestimo")
 	private Integer codigoemprestimo;
 	
-	@Column (name = "numeromatriculaaluno")
-	private String numeroMatriculaAluno;
-	
-	
-
-	@Column (name = "codigolivro")
-	private String codigoLivro;
-	
-
 	@Column (name = "dataemprestimo ")
 	private Instant dataEmprestimo;
 
@@ -72,22 +63,6 @@ public class Emprestimo {
 
 	public void setCodigoemprestimo(Integer codigoemprestimo) {
 		this.codigoemprestimo = codigoemprestimo;
-	}
-
-	public String getNumeroMatriculaAluno() {
-		return numeroMatriculaAluno;
-	}
-
-	public void setNumeroMatriculaAluno(String numeroMatriculaAluno) {
-		this.numeroMatriculaAluno = numeroMatriculaAluno;
-	}
-
-	public String getCodigoLivro() {
-		return codigoLivro;
-	}
-
-	public void setCodigoLivro(String codigoLivro) {
-		this.codigoLivro = codigoLivro;
 	}
 
 	public Instant getDataEmprestimo() {
