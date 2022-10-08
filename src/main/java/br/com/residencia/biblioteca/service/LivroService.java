@@ -27,6 +27,13 @@ public class LivroService {
 		public Livro updateLivro(Livro livro, Integer id) {
 			Livro livroExistenteNoBanco = getLivroById(id);
 			
+			livroExistenteNoBanco.setCodigoIsbn(livro.getCodigoIsbn());
+			livroExistenteNoBanco.setDataLancamento(livro.getDataLancamento());
+			//livroExistenteNoBanco.setEditora(Editora);
+			//livroExistenteNoBanco.setEmprestimo(Emprestimo);
+			livroExistenteNoBanco.setNomeAutor(livro.getNomeAutor());
+			livroExistenteNoBanco.setNomeLivro(livro.getNomeLivro());
+			
 			return livroRepository.save(livroExistenteNoBanco);
 		}
 		
