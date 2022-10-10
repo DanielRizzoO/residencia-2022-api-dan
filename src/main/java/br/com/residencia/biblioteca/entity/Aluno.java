@@ -1,15 +1,14 @@
 package br.com.residencia.biblioteca.entity;
 
+import java.time.Instant;
+import java.util.Set;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-
-import java.time.Instant;
-import java.util.Set;
-
-import javax.persistence.Column;
 import javax.persistence.Table;
 
 @Entity
@@ -59,6 +58,10 @@ public class Aluno {
 	public Integer getNumeroMatriculaAluno() {
 		return numeroMatriculaAluno;
 	}
+	
+	@OneToMany(mappedBy="aluno")
+	private Set<Emprestimo> emprestimo;
+	
 
 	public void setNumeroMatriculaAluno(Integer numeroMatriculaAluno) {
 		this.numeroMatriculaAluno = numeroMatriculaAluno;
@@ -127,9 +130,8 @@ public class Aluno {
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
-	
-	
-	
 
+	
+	
 }
 

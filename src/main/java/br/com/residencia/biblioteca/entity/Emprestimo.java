@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JacksonInject.Value;
 @Entity
 @Table(name = "emprestimo")
 public class Emprestimo {
-	
+
 	public Aluno getAluno() {
 		return aluno;
 	}
@@ -37,33 +37,22 @@ public class Emprestimo {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "codigoemprestimo")
 	private Integer codigoemprestimo;
-	
-	@Column (name = "numeromatriculaaluno")
-	private String numeroMatriculaAluno;
-	
-	
 
-	@Column (name = "codigolivro")
-	private String codigoLivro;
-	
-
-	@Column (name = "dataemprestimo ")
+	@Column(name = "dataemprestimo ")
 	private Instant dataEmprestimo;
 
-	@Column (name = "dataentrega")
+	@Column(name = "dataentrega")
 	private Instant dataEntrega;
-	
-	@Column (name = "valoremprestimo")
+
+	@Column(name = "valoremprestimo")
 	private Value valorEmprestimo;
-	
+
 	@ManyToOne
-	@JoinColumn (name = "numeromatriculaaluno",
-	referencedColumnName = "numeromatriculaaluno")
+	@JoinColumn(name = "numeromatriculaaluno", referencedColumnName = "numeromatriculaaluno")
 	private Aluno aluno;
-	
+
 	@OneToOne
-	@JoinColumn (name = "codigolivro",
-	referencedColumnName = "codigolivro")
+	@JoinColumn(name = "codigolivro", referencedColumnName = "codigolivro")
 	private Livro livro;
 
 	public Integer getCodigoemprestimo() {
@@ -72,22 +61,6 @@ public class Emprestimo {
 
 	public void setCodigoemprestimo(Integer codigoemprestimo) {
 		this.codigoemprestimo = codigoemprestimo;
-	}
-
-	public String getNumeroMatriculaAluno() {
-		return numeroMatriculaAluno;
-	}
-
-	public void setNumeroMatriculaAluno(String numeroMatriculaAluno) {
-		this.numeroMatriculaAluno = numeroMatriculaAluno;
-	}
-
-	public String getCodigoLivro() {
-		return codigoLivro;
-	}
-
-	public void setCodigoLivro(String codigoLivro) {
-		this.codigoLivro = codigoLivro;
 	}
 
 	public Instant getDataEmprestimo() {
@@ -113,6 +86,5 @@ public class Emprestimo {
 	public void setValorEmprestimo(Value valorEmprestimo) {
 		this.valorEmprestimo = valorEmprestimo;
 	}
-	
-}
 
+}
